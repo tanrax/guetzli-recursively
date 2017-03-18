@@ -14,13 +14,13 @@ and Python 3.
 python guetzli-recursively.py [folder]
 ```
 
-Example
+## Example
 
 ```bash
 python guetzli-recursively.py img
 ```
 
-## out
+out
 
 ```bash
 img/tasks.jpg
@@ -29,5 +29,4 @@ img/portfolio/idecrea/space.jpg
 It is not necessary to optimize
 img/portfolio/home.jpg
 Save 3%
-img/master.jpg
 ```
