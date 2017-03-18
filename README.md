@@ -20,3 +20,14 @@ Example
 python guetzli-recursively.py img
 ```
 
+## out
+
+```bash
+img/tasks.jpg
+Save 6%
+img/portfolio/idecrea/space.jpg
+It is not necessary to optimize
+img/portfolio/home.jpg
+Save 3%
+img/master.jpg
+```
