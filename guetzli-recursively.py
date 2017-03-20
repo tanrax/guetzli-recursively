@@ -29,12 +29,13 @@ for dirpath, dirnames, files in walk(top_dir):
                 except:
                     size_out = size_source
                 size_acurate = 100 * size_out / size_source
-                # Remove source
-                try:
-                    remove(url)
-                except:
-                    pass
+                # Check if it is cost effective to replace it
                 if size_acurate < 100:
+                    # Remove source
+                    try:
+                        remove(url)
+                    except:
+                        pass
                     # Move temp to source
                     rename(url_out, url)
                     print('Save ' + str(100 - size_acurate) + '%')
