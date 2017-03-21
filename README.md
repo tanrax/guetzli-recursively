@@ -11,13 +11,13 @@ and Python 3.
 # Use
 
 ```bash
-python guetzli-recursively.py [folder]
+python3 guetzli-recursively.py [folder]
 ```
 
 ## Example
 
 ```bash
-python guetzli-recursively.py img
+python3 guetzli-recursively.py img
 ```
 
 out

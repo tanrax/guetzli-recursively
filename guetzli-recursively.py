@@ -38,6 +38,6 @@ for dirpath, dirnames, files in walk(top_dir):
                         pass
                     # Move temp to source
                     rename(url_out, url)
-                    print('Save ' + str(100 - size_acurate) + '%')
+                    print('Save ' + str(round(100 - size_acurate, 2)) + '%')
                 else:
                     print('It is not necessary to optimize')
