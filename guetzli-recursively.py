@@ -10,9 +10,10 @@ TYPES = ('jpeg',)
 
 for dirpath, dirnames, files in walk(top_dir):
     for name in files:
-        if what(path.join(dirpath, name)) in TYPES:
+        url = path.join(dirpath, name)
+        # Check type
+        if what(url) in TYPES:
             # Get urls
-            url = path.join(dirpath, name)
             print(url)
             url_out = path.join(top_dir, TEMP_FILE)
             # Remove temp image
