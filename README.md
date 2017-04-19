@@ -1,6 +1,8 @@
 
 Guetzli is a Google program to optimize JPEG images. Unfortunately, it only works one file at a time. With this script in Python you can do it recursively a whole folder.
 
+**UPDATE** [GUI for Mac OS](https://github.com/tanrax/guetzli-recursively-gui)
+
 # Install 
 
 Guetzli must be installed on your system. Follow the official instructions.
