@@ -8,7 +8,7 @@ Guetzli is a Google program to optimize JPEG images. Unfortunately, it only work
 Guetzli must be installed on your system. Follow the official instructions.
 [Guetzli](https://github.com/google/guetzli)
 
-and Python 3.
+and 2.7.10 or Python 3.
 
 # Use
 
