@@ -10,16 +10,22 @@ Guetzli must be installed on your system. Follow the official instructions.
 
 and 2.7.10 or Python 3.
 
+After
+
+```bash
+pip3 install guetzli-recursively
+```
+
 # Use
 
 ```bash
-python3 guetzli-recursively.py [folder]
+guetzli_recursively [folder]
 ```
 
 ## Example
 
 ```bash
-python3 guetzli-recursively.py img
+guetzli_recursively img/
 ```
 
 out

@@ -1,0 +1,10 @@
+
+guetzli_recursively\.egg-info/
+
+dist/
+
+build/lib/
+
+MANIFEST
+
+setup\.cfg
