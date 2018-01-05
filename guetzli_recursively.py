@@ -16,7 +16,7 @@ LIMIT_QUALITY = 84
 @click.option(
         '--quality',
         default=100,
-        help='Quality >= ${quality} [default 100].'.format(
+        help='Quality >= {quality} [default 100].'.format(
             quality=LIMIT_QUALITY
         )
 )
