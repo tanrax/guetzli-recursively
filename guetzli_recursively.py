@@ -9,16 +9,24 @@ from subprocess import call
 # Variables
 TEMP_FILE = 'temp.jpg'
 TYPES = ('jpeg',)
+LIMIT_QUALITY = 84
 
 
 @click.command()
+@click.option(
+        '--quality',
+        default=100,
+        help='Quality >= ${quality} [default 100].'.format(
+            quality=LIMIT_QUALITY
+        )
+)
 @click.argument('folder', type=click.Path(exists=True))
-def run(folder):
+def run(quality, folder):
     for dirpath, dirnames, files in walk(folder):
         for name in files:
             url = path.join(dirpath, name)
             # Check type
-            if what(url) in TYPES:
+            if what(url) in TYPES or quality >= LIMIT_QUALITY:
                 # Get urls
                 click.echo(url)
                 url_out = path.join(folder, TEMP_FILE)
@@ -28,7 +36,7 @@ def run(folder):
                 except:
                     pass
                 # Execute guetzli
-                call(['guetzli', url, url_out])
+                call(['guetzli', '--quality', str(quality), url, url_out])
                 # Print your have saved
                 size_source = path.getsize(url)
                 try:
@@ -45,7 +53,8 @@ def run(folder):
                         pass
                     # Move temp to source
                     rename(url_out, url)
-                    click.echo('Save ' + str(round(100 - size_acurate, 2)) + '%')
+                    click.echo(
+                            'Save ' + str(round(100 - size_acurate, 2)) + '%')
                 else:
                     click.echo('It is not necessary to optimize')
 

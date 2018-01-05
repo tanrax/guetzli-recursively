@@ -38,3 +38,11 @@ It is not necessary to optimize
 img/portfolio/home.jpg
 Save 3%
 ```
+
+# Quality
+
+Must be greater than or equal to 84.
+
+```bash
+guetzli_recursively --quality 85 img/
+```
