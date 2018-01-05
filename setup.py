@@ -2,7 +2,7 @@ from setuptools import setup
 setup(
   name = 'guetzli_recursively',
   py_modules=['guetzli_recursively'],
-  version = '1.2.0',
+  version = '1.2.1',
   description = 'Script in Python to convert all the jpeg of a folder recursively with Guetzli.',
   author = 'Andros Fenollosa',
   author_email = 'andros@fenollosa.email',
