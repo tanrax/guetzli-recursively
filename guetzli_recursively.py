@@ -14,14 +14,19 @@ LIMIT_QUALITY = 84
 
 @click.command()
 @click.option(
-        '--quality',
-        default=100,
-        help='Quality >= {quality} [default 100].'.format(
-            quality=LIMIT_QUALITY
-        )
+    '--quality',
+    default=100,
+    help='Quality >= {quality} [default 100].'.format(
+        quality=LIMIT_QUALITY
+    )
+)
+@click.option(
+    '--memlimit',
+    default=28000,
+    help='Memory limit in MB. Guetzli will fail if unable to stay under the limit. Default is 28000 MB'
 )
 @click.argument('folder', type=click.Path(exists=True))
-def run(quality, folder):
+def run(quality, memlimit, folder):
     for dirpath, dirnames, files in walk(folder):
         for name in files:
             url = path.join(dirpath, name)
@@ -36,7 +41,10 @@ def run(quality, folder):
                 except:
                     pass
                 # Execute guetzli
-                call(['guetzli', '--quality', str(quality), url, url_out])
+                args = ['guetzli', '--quality',
+                        str(quality), '--memlimit', str(memlimit), url, url_out]
+                print(' '.join(args))
+                call(args)
                 # Print your have saved
                 size_source = path.getsize(url)
                 try:
@@ -54,7 +62,7 @@ def run(quality, folder):
                     # Move temp to source
                     rename(url_out, url)
                     click.echo(
-                            'Save ' + str(round(100 - size_acurate, 2)) + '%')
+                        'Save ' + str(round(100 - size_acurate, 2)) + '%')
                 else:
                     click.echo('It is not necessary to optimize')
 
