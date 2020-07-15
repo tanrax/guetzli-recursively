@@ -54,7 +54,7 @@ guetzli_recursively --quality 85 img/
 # Mem limit (bytes)
 
 ```bash
-guetzli_recursively --quality 85 --memlimit 28000
+guetzli_recursively --memlimit 28000 img/
 ```
 
 # GUIs
