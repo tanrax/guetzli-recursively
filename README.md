@@ -51,6 +51,12 @@ Must be greater than or equal to 84.
 guetzli_recursively --quality 85 img/
 ```
 
+# Mem limit (bytes)
+
+```bash
+guetzli_recursively --quality 85 --memlimit 28000
+```
+
 # GUIs
 
 - [Mac OS](https://github.com/tanrax/guetzli-recursively-gui)
