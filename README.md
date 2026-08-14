@@ -60,3 +60,7 @@ guetzli_recursively --memlimit 28000 img/
 # GUIs
 
 - [Mac OS](https://github.com/tanrax/guetzli-recursively-gui)
+
+## Contributing
+
+Contributions are welcome! Please see the [contribution guidelines](https://git.andros.dev/andros/contribute) for instructions on how to submit issues or pull requests.
