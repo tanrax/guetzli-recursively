@@ -3,13 +3,20 @@
 # Libraries
 import click
 from os import path, walk, remove, rename
-from imghdr import what
 from subprocess import call
 
 # Variables
 TEMP_FILE = 'temp.jpg'
 TYPES = ('jpeg',)
 LIMIT_QUALITY = 84
+
+
+def what(filename):
+    with open(filename, 'rb') as image:
+        header = image.read(32)
+    if header[6:10] in (b'JFIF', b'Exif') or header[:4] == b'\xff\xd8\xff\xdb':
+        return 'jpeg'
+    return None
 
 
 @click.command()
